@@ -1,0 +1,7 @@
+Início;
+Leia N;
+Var1 = N-1;
+Var2 = 10-N;
+N = (Var1 x 10) + Var 2;
+Imprima (N);
+Fim.
