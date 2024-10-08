@@ -1,4 +1,4 @@
-Projeto Desenvolve - Itabira
-Programação básica com Python
-Matricula: PDIta 107
+- Projeto Desenvolve - Itabira
+- Programação básica com Python
+- Matricula: PDIta 107
 
