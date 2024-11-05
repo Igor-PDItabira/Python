@@ -14,13 +14,18 @@ for _ in range(quantidade2):
     lista2.append(elemento)
 
 lista_intercalada = []
-min_length = min(len(lista1), len(lista2))
+tamanho_list1 = len(lista1)
+tamanho_list2 = len(lista2)
 
-for i in range(min_length):
-    lista_intercalada.append(lista1[i])
-    lista_intercalada.append(lista2[i])
+if lista1 >= lista2:
+    tamanho = len(lista1)
+else:
+    tamanho = len(lista2)
 
-lista_intercalada.extend(lista1[min_length:])
-lista_intercalada.extend(lista2[min_length:])
+for i in range(tamanho):
+    if i < len(lista1):
+        lista_intercalada.append(lista1[i])
+    if i < len(lista2):
+        lista_intercalada.append(lista2[i])
 
-print("Lista intercalada:", ' '.join(map(str, lista_intercalada)))
+print('Lista intercalada: ', lista_intercalada)
