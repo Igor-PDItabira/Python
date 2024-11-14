@@ -2,26 +2,23 @@ import random
 
 lista = [random.randint(-10, 10) for _ in range(20)]
 
+inicio_fatia_maior, tam_fatia_maior = 0, 0
+inicio_fatia_atual, tam_fatia_atual = 0, 0
 
-def intervalo_com_mais_negativos(lista):
-    max_negativos = 0
-    intervalo = (0, 0)
-
-    for i in range(len(lista)):
-        for j in range(i+1, len(lista)+1):
-            # Contar quantos números negativos há no intervalo
-            negativos = sum(1 for x in lista[i:j] if x < 0)
-            if negativos > max_negativos:
-                max_negativos = negativos
-                intervalo = (i, j)
-
-    return intervalo
+for i in range(len(lista)):
+    if lista[i] < 0:
+        tam_fatia_atual += 1
+        if tam_fatia_atual == 1:
+            inicio_fatia_atual = i
+    else:
+        if tam_fatia_atual > tam_fatia_maior:
+            tam_fatia_maior = tam_fatia_atual
+            inicio_fatia_maior = inicio_fatia_atual
+        tam_fatia_atual = 0
 
 
 print("Original:", lista)
 
-inicio, fim = intervalo_com_mais_negativos(lista)
-
-del lista[inicio:fim]
+del lista[inicio_fatia_maior:inicio_fatia_maior+tam_fatia_maior]
 
 print("Editada:", lista)
