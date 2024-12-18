@@ -1,0 +1,5 @@
+nome,senha,permissao
+admin,0000,geral
+Igor,1234,limitado
+Teste,1111,limitado
+a,a,geral
